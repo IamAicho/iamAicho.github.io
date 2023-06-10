@@ -1,0 +1,80 @@
+/* Selector（選擇器）
+1.基本 selector : 標籤(HTML tag)、ID、Class
+2.進階 selector : 基本的選擇器三種組合使用、*
+3.虛擬 selector
+*/
+
+/* 1.基本 selector -> 權重: ID > class > 標籤 */
+/* h1 是標籤的選擇器（selector） */
+h1 {
+    /* 屬性（property）:值（value）; -> 聲明（declaration） */
+    color: darkblue; 
+    font-size: 30px; /* 簡碼: fz15 */
+    padding: 10px;
+}
+
+h2 {
+    color: rgba(255, 0, 0, .5); /* rgba: a(alpha)透明度 */
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+h3 {
+    color: #333; /* HEX色碼 */
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+h4 {
+    color: #222222; /* 十六進位色碼(6碼:RRGGBB, 8碼:RRGGBBAA) */
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+p {
+    color: #222222;
+    font-size: 15px;
+}
+
+/* ID 的選擇器（selector）: 一個元件只能用一個, 就像身分證字號不會重複 */
+#red {
+    color: red;
+}
+
+/* Class 的選擇器（selector）: 通常用在重複出現的文字、圖片、區塊等各種元素 */
+/* 如多個 Class 做使用,最下面的 Class 會被最後設定到 */
+.text-lg {
+    font-size: 40px;
+    background: yellowgreen;
+}
+
+.text-blue {
+    color: blue;
+}
+
+
+
+/* 2.進階 selector -> 這三種進階選擇器的權重相同,越特定的選擇器權重越重 */
+/* 後代選擇器: 以空格區隔兩個選擇器，後者選擇器必須在前者以內，屬性才會生效。 */
+div a { /* <div>中的<a>文字顏色為橘色 */
+    color: orange;
+    background: black;
+}
+
+/* 子選擇器: 以「>」區隔兩個元素，後者選擇器必須在前者以內，且中間沒有其他元素，屬性才會生效。 */
+div>h3 { /* <h1>中底下直屬的<a>文字顏色為黃色 */
+    color: yellow;
+    background: blueviolet;
+}
+
+/* 群組選擇器: 以「,」區隔兩個元素，多個元素會套用同一種樣式。 */
+h3, h4 { /* 同時定義<h1>及<h2>文字顏色為藍色 */
+    color: blue;
+} 
+
+
+/* 3.虛擬 selector -> 常用的: hover(滑鼠停留時的樣式) */
+/* 為 HTML 建立原本不存在的「偽元素」。 */
+a:hover { /* 當<a>被滑鼠停留時文字顏色為藍色 */
+    color: red;
+} 
